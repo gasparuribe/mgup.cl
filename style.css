@@ -21,11 +21,21 @@ html, body{
   margin-right: auto;
   margin-left: auto;
   margin-top: 7px;
-  width: 53px;
+  width: 130px;
 }
 .img_logo{
   width: auto;
   max-height: 100%;
+  float: left;
+}
+.txt_logo{
+  text-decoration: none;
+  float: left;
+  padding-top: 15px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #2b2c2c;
 }
 #content_header{
   background-color: red;

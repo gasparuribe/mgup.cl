@@ -30,7 +30,7 @@ body {
 }
 
 .fade-in:hover .shake {
-    animation: shake 0.5s;
+    animation: vibrate 0.5s;
     animation-iteration-count: infinite
 }
 
@@ -39,8 +39,8 @@ body {
 }
 /*https://stackoverflow.com/questions/44455538/css-keyframe-phone-vibrate */
 .vibration {
-  -webkit-animation: vibrate 2s cubic-bezier(.36, .07, .19, .97) infinite;
-  animation: vibrate 2s cubic-bezier(.36, .07, .19, .97) infinite;
+  -webkit-animation: vibrate_pulse 2s cubic-bezier(.36, .07, .19, .97) infinite;
+  animation: vibrate_pulse 2s cubic-bezier(.36, .07, .19, .97) infinite;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -48,7 +48,7 @@ body {
   -webkit-perspective: 300px;
   perspective: 300px;
 }
-@keyframes vibrate {
+@keyframes vibrate_pulse {
   0%, 2%, 4%, 6%, 8%, 10%, 12%, 14%, 16%, 18% {
     -webkit-transform: translate3d(-1px, 0, 0);
             transform: translate3d(-1px, 0, 0);
@@ -62,7 +62,7 @@ body {
             transform: translate3d(0, 0, 0);
   }
 }
-@keyframes shake {
+@keyframes vibrate {
     0% {
         transform: translate(1px, 1px) rotate(0deg)
     }

@@ -96,10 +96,10 @@
             let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
             if (currentScroll > 0 && lastScroll <= currentScroll){
               lastScroll = currentScroll;
-              console.log("up");
+              //console.log("Scroll Down, Web Up");
             }else{
               lastScroll = currentScroll;
-              console.log("down");
+              //console.log("Scroll Up, Web Down");
             }
             var modScroll=currentScroll*0.55;
             f.style.transform = 'translateY('+modScroll+'px)';

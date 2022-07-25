@@ -38,6 +38,7 @@ body {
     border: 10px solid #a0a0a0
 }
 /*https://stackoverflow.com/questions/44455538/css-keyframe-phone-vibrate */
+/* Remplazar las siguientes con : https://elrumordelaluz.github.io/csshake/ */
 .vibration {
   -webkit-animation: vibrate_pulse 2s cubic-bezier(.36, .07, .19, .97) infinite;
   animation: vibrate_pulse 2s cubic-bezier(.36, .07, .19, .97) infinite;

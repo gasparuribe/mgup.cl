@@ -234,7 +234,7 @@ body {
 }
 
 .copyright-box a {
-    color: #939393; /* hotpink */
+    color: hotpink; /* #939393 */
     text-decoration: none
 }
 

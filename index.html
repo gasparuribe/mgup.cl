@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Soluciones Tecnológicas , Simples y Creativas</title>
+    <title>Soluciones Tecnológicas, Simples y Creativas</title>
     <meta name="description" content="Planificación y gestión de proyectos. Hosting, mail y sitios web.">
     <meta name="author" content="gasparuribe.cl">
     <meta name="copyright" content="Gaspar Uribe">
@@ -12,58 +12,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   </head>
   <body>
+    <select id="language-select" onchange="setLanguage(this.value)">
+      <option value="">Language - Idioma</option>
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
     <div class="home-header-wrap">
       <div class="header-content-wrap ">
         <div class="container" id="thetext">
-          <h1 class="intro-text">Soluciones Tecnológicas <br> Simples y Creativas</h1>
+          <h1 class="intro-text">Soluciones Tecnológicas, <br> Simples y Creativas</h1>
         </div>
       </div><!-- .header-content-wrap -->
       <div class="clear"></div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-sm-3 focus-box fade-in">
-          <div class="service-icon"> <!-- href="" -->
-            <i class="pixeden vibration" style="background:url(mind.png) no-repeat center;width:100%; height:100%;background-size: 90px 100px;"></i>
-          </div>
-          <h3 class="red-border-bottom">Proyectos</h3>
-          <!-- FOCUS HEADING -->
-          <p>Planificación y gestión</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 focus-box fade-in">
-          <div class="service-icon">
-            <i class="pixeden shake" style="background:url(woven-150x150-small.jpg) no-repeat center;width:100%; height:100%;"></i>
-          </div>
-          <h3 class="red-border-bottom">Sitios web</h3>
-          <!-- FOCUS HEADING -->
-          <p>Programación y diseño</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 focus-box fade-in">
-          <div class="service-icon">
-            <i class="pixeden shake" style="background:url(email-address.png) no-repeat center;width:100%; height:100%;background-size: 90px 90px;"></i>
-          </div>
-          <h3 class="red-border-bottom">Mail</h3>
-          <!-- FOCUS HEADING -->
-          <p>cuentas@tu.dominio</p>
-        </div>
-        <div class="col-lg-3 col-sm-3 focus-box fade-in">
-          <div class="service-icon">
-            <i class="pixeden shake" style="background:url(server-cloud.png) no-repeat center;width:100%; height:100%;background-size: 90px 90px;"></i>
-          </div>
-          <h3 class="red-border-bottom">Hosting</h3>
-          <!-- FOCUS HEADING -->
-          <p>Gestión de servidores</p>
-        </div>
-        <div class="textwidget custom-html-widget">
-          <div style="clear:both;"></div>
-        </div>
-      </div>
+      <div class="row" id="servicesRow"></div>
     </div>
     <footer id="footer" itemscope="itemscope">
       <div class="container">
         <div class="col-md-3 copyright"  data-nosnippet>
           <div id="div_logo"><img src="logo-320x320-1-small.png" class="img_logo" alt="MGUP" itemprop="logo" width="321" height="376"></div>
-          <p id="copyright">MGUP &copy; 2022</p>
+          <p id="copyright">MGUP &copy; <span id="copyright_year"></span></p>
           <div class="copyright-box">
             <a href="https://gasparuribe.cl?link_from=mgup-cl" target="_blank" rel="nofollow">gasparuribe.cl</a>
           </div>
@@ -88,6 +57,213 @@
       </div>
     </footer>
     <script>
+      
+      var browserLang = navigator.language || navigator.userLanguage; 
+      function checkPreferredLanguage() {
+          // Check if the preferred language is already set
+          if (!localStorage.getItem('preferredLanguage')) {
+              // If not set, set the browser language as the preferred language
+              var language = (browserLang && browserLang.startsWith('es')) ? 'es' : 'en';
+              localStorage.setItem('preferredLanguage', language);
+          }
+      }
+      const translations = {
+        "en": {
+          "header": "Technological Solutions, <br> Simple and Creative",
+          "services":[
+            {
+              icon: "uxwing_com_administrator-developer-icon.png",
+              iconStyle: "background-size: 85px 100px;",
+              title: "Administrative Assistant",
+              description: "Assign me tasks, I learn quickly!",
+              content: ""
+            },
+            {
+              icon: "woven-150x150-small.jpg",
+              iconStyle: "",
+              title: "Websites",
+              description: "Development, integrations, and maintenance",
+              content: ""
+            },
+            {
+              icon: "email-address.png",
+              iconStyle: "background-size: 90px;",
+              title: "Mail",
+              description: "Personal emails and bulk mailings",
+              content: ""
+            },
+            {
+              icon: "server-cloud.png",
+              iconStyle: "background-size: 90px;",
+              title: "Cloud (Hosting, Servers)",
+              description: "Management and configuration",
+              content: ""
+            },
+            {
+              icon: "uxwing_com_programmer-computer-icon.png",
+              iconStyle: "background-size: 90px;",
+              title: "Programming",
+              description: "Automation and integrations",
+              content: ""
+            },
+            {
+              icon: "uxwing_com_read-icon.png",
+              iconStyle: "background-size: 87px;",
+              title: "Private Lessons",
+              description: "Basic and advanced computing",
+              content: ""
+            },
+            {
+              icon: "uxwing_dream-icon.png",
+              iconStyle: "background-size: 100px;",
+              title: "Consulting",
+              description: "Experience and expertise",
+              content: ""
+            },
+            {
+              icon: "thenounproject_com_Besokpagi-smart-home-5723166.png",
+              iconStyle: "background-size: 137px;background-position-y: 25px;",
+              title: "Home Automation",
+              description: "Technologies for the home",
+              content: ""
+            },
+          ],
+        },
+        "es": {
+          "header": "Soluciones Tecnológicas, <br> Simples y Creativas",
+          "services":[
+            {
+              icon: "uxwing_com_administrator-developer-icon.png",
+              iconStyle: "background-size: 85px 100px;",
+              title: "Asistente Administrativo",
+              description: "Encárgame tareas, ¡aprendo rápido!",
+              content:` 
+              <div style="text-align: left;">
+                10 años experiencia como asistente administrativo en el área Informática Digital de Centro MIP.
+                <br><br>
+                <b>Tareas realizadas:</b> 
+                <ul style="width: 400px;">
+                  <li>Soporte Técnico</li>
+                  <li>Contacto a Clientes</li>
+                  <li>Generación de boletas</li>
+                  <li>Tareas de Ofimatica, Exel</li>
+                  <li>Coordinación, seguimiento y derivacion de tareas</li>
+                  <li>Gestion Multiple Correos</li>
+                  <li>Aprender y usar nuevas Apps</li>
+                  <li>Otras tareas con mis conocimientos:
+                    <ul>
+                      <li>Programación</li>
+                      <li>Configuraciones</li>
+                      <li>Capacitacion</li>
+                      <li>Otros</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              `
+            },
+            {
+              icon: "woven-150x150-small.jpg",
+              iconStyle: "",
+              title: "Sitios web",
+              description: "Desarrollo, integraciones y mantención",
+              content: ""
+            },
+            {
+              icon: "email-address.png",
+              iconStyle: "background-size: 90px;",
+              title: "Correo",
+              description: "Correos personales y envíos masivos",
+              content: ""
+            },
+            {
+              icon: "server-cloud.png",
+              iconStyle: "background-size: 90px;",
+              title: "Cloud (Host, servidores)",
+              description: "Gestión y configuración",
+              content: ""
+            },
+            {
+              icon: "uxwing_com_programmer-computer-icon.png",
+              iconStyle: "background-size: 90px;",
+              title: "Programación",
+              description: "Automatización e integraciones",
+              content: ""
+            },
+            {
+              icon: "uxwing_com_read-icon.png",
+              iconStyle: "background-size: 87px;",
+              title: "Clases Particulares",
+              description: "Computación básica y avanzada",
+              content: ""
+            },
+            {
+              icon: "uxwing_dream-icon.png",
+              iconStyle: "background-size: 100px;",
+              title: "Asesoría",
+              description: "Experiencia y conocimientos",
+              content: ""
+            },
+            {
+              icon: "thenounproject_com_Besokpagi-smart-home-5723166.png",
+              iconStyle: "background-size: 137px;background-position-y: 25px;",
+              title: "Domótica",
+              description: "Tecnologías para el hogar",
+              content: ""
+            },
+          ],
+        }
+      };
+      function setLanguage(lang) {
+        localStorage.setItem('preferredLanguage', lang);
+        var data = translations[lang];
+        document.querySelector(".intro-text").innerHTML = data.header;
+        const servicesRow = document.getElementById("servicesRow");
+        servicesRow.innerHTML='';
+        data.services.forEach(service => {
+          const div = document.createElement('div');
+          div.classList.add("col-lg-3");
+          div.classList.add("col-sm-3");
+          div.classList.add("focus-box");
+          div.classList.add("fade-in");
+          div.innerHTML=`
+            <div class="service-icon">
+              <i class="pixeden shake" style="background:url(${service.icon}) no-repeat center;width:100%; height:100%;${service.iconStyle}"></i>
+            </div>
+            <h3 class="red-border-bottom">${service.title}</h3>
+            <p>${service.description}</p>
+          `;
+          if(service.content){
+            div.style.cursor="pointer";
+            div.addEventListener('click', () => {
+              console.log('Clicked:', service.title);
+              console.log('data:',service.content);
+              const returnImg = document.createElement('img');
+              returnImg.src="uxwing_com_arrow-curved-left-icon.png";
+              returnImg.style.width="40px";
+              returnImg.style.cursor="pointer";
+              returnImg.style.marginTop="-34px";
+              returnImg.addEventListener('click', () => {
+                setLanguage(localStorage.getItem('preferredLanguage'));
+              });
+              servicesRow.innerHTML="";
+              servicesRow.appendChild(returnImg);
+              servicesRow.insertAdjacentHTML("beforeend", "<hr>"+service.content+"<hr><br>");
+              
+            });
+          }
+          servicesRow.appendChild(div);
+
+        });
+      }
+      window.onload = function () {
+          checkPreferredLanguage();
+          var preferredLanguage = localStorage.getItem('preferredLanguage');
+          console.log("Bowser:" +browserLang + " | Preferes " + preferredLanguage);
+          setLanguage(preferredLanguage);
+          document.getElementById("copyright_year").innerHTML = new Date().getFullYear();
+      };
+
       function scrollDetect(){
         var lastScroll = 0;
         var f = document.getElementById('thetext');

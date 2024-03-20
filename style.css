@@ -9,7 +9,12 @@ body {
     font-weight: 400;
     font-size: 16px
 }
-
+#language-select{
+    position: fixed;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    z-index: 9999; /* Ensures it stays on top */
+}
 #div_logo {
     height: 62px;
     margin-right: auto;
@@ -35,7 +40,7 @@ body {
 }
 
 .fade-in:hover .service-icon {
-    border: 10px solid #a0a0a0
+    border: 10px solid #fdd6bb
 }
 
 

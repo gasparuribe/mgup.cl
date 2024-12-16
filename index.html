@@ -1,294 +1,403 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Soluciones Tecnológicas, Simples y Creativas</title>
-    <meta name="description" content="Planificación y gestión de proyectos. Hosting, mail y sitios web.">
-    <meta name="author" content="gasparuribe.cl">
-    <meta name="copyright" content="Gaspar Uribe">
-    <link rel="icon" href="logo-320x320-1-small.png" sizes="32x32">
-    <link rel="icon" href="logo-320x320-1-small.png" sizes="192x192">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" id="style-css" href="style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-  </head>
-  <body>
-    <select id="language-select" onchange="setLanguage(this.value)">
-      <option value="">Language - Idioma</option>
-      <option value="es">Español</option>
-      <option value="en">English</option>
-    </select>
-    <div class="home-header-wrap">
-      <div class="header-content-wrap ">
-        <div class="container" id="thetext">
-          <h1 class="intro-text">Soluciones Tecnológicas, <br> Simples y Creativas</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="https://gasparuribe.cl/logo-320x320-1-small.png" sizes="32x32">
+<link rel="icon" href="https://gasparuribe.cl/logo-320x320-1-small.png" sizes="192x192">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Soluciones tecnológicas y administrativas</title>
+
+<!-- Fav Icon -->
+<link rel="icon" href="https://gasparuribe.cl/logo-320x320-1-small.png" type="image/x-icon">
+
+<!-- Stylesheets -->
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/contact.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/global.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/swiper.min.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<!-- page wrapper -->
+<body>
+    <div class="boxed_wrapper">
+
+        <!-- mouse-pointer -->
+        <div class="mouse-pointer" id="mouse-pointer">
+            <div class="icon"><i class="icon-06"></i><i class="icon-05"></i></div>
         </div>
-      </div><!-- .header-content-wrap -->
-      <div class="clear"></div>
-    </div>
-    <div class="container">
-      <div class="row" id="servicesRow"></div>
-    </div>
-    <footer id="footer" itemscope="itemscope">
-      <div class="container">
-        <div class="col-md-3 copyright"  data-nosnippet>
-          <div id="div_logo"><img src="logo-320x320-1-small.png" class="img_logo" alt="MGUP" itemprop="logo" width="321" height="376"></div>
-          <p id="copyright">MGUP &copy; <span id="copyright_year"></span></p>
-          <div class="copyright-box">
-            <a href="https://gasparuribe.cl?link_from=mgup-cl" target="_blank" rel="nofollow">gasparuribe.cl</a>
-          </div>
-        </div>
-        <div class="col-md-3 footer-details">
-          <a href="https://wa.me/56995330765" rel="nofollow">
-            <i class="zmdi zmdi-whatsapp" style="font-size: 40px;padding: 23px;"></i>
-            <div class="footer-phone">+56 9 9533 0765</div>
-          </a>
-        </div>
-        <div class="col-md-3 footer-details">
-          <a href="mailto:soluciones@mgup.cl" rel="nofollow">
-            <i class="zmdi zmdi-email" style="font-size: 40px;padding: 23px;"></i>
-            <div class="footer-email">soluciones@mgup.cl</div>
-          </a>
-        </div>
-        <div class="col-md-3 footer-details"  data-nosnippet>
-          <i class="zmdi zmdi-calendar" style="font-size: 40px;padding: 23px;"></i>
-          <div class="footer-address">Consultar disponibilidad</div>
-        </div>
-        <div style="clear:both;"></div>
-      </div>
-    </footer>
-    <script>
-      
-      var browserLang = navigator.language || navigator.userLanguage; 
-      function checkPreferredLanguage() {
-          // Check if the preferred language is already set
-          if (!localStorage.getItem('preferredLanguage')) {
-              // If not set, set the browser language as the preferred language
-              var language = (browserLang && browserLang.startsWith('es')) ? 'es' : 'en';
-              localStorage.setItem('preferredLanguage', language);
-          }
-      }
-      const translations = {
-        "en": {
-          "header": "Technological Solutions, <br> Simple and Creative",
-          "services":[
-            {
-              icon: "uxwing_com_administrator-developer-icon.png",
-              iconStyle: "background-size: 85px 100px;",
-              title: "Administrative Assistant",
-              description: "Assign me tasks, I learn quickly!",
-              content: ""
-            },
-            {
-              icon: "woven-150x150-small.jpg",
-              iconStyle: "",
-              title: "Websites",
-              description: "Development, integrations, and maintenance",
-              content: ""
-            },
-            {
-              icon: "email-address.png",
-              iconStyle: "background-size: 90px;",
-              title: "Mail",
-              description: "Personal emails and bulk mailings",
-              content: ""
-            },
-            {
-              icon: "server-cloud.png",
-              iconStyle: "background-size: 90px;",
-              title: "Cloud (Hosting, Servers)",
-              description: "Management and configuration",
-              content: ""
-            },
-            {
-              icon: "uxwing_com_programmer-computer-icon.png",
-              iconStyle: "background-size: 90px;",
-              title: "Programming",
-              description: "Automation and integrations",
-              content: ""
-            },
-            {
-              icon: "uxwing_com_read-icon.png",
-              iconStyle: "background-size: 87px;",
-              title: "Private Lessons",
-              description: "Basic and advanced computing",
-              content: ""
-            },
-            {
-              icon: "uxwing_dream-icon.png",
-              iconStyle: "background-size: 100px;",
-              title: "Consulting",
-              description: "Experience and expertise",
-              content: ""
-            },
-            {
-              icon: "thenounproject_com_Besokpagi-smart-home-5723166.png",
-              iconStyle: "background-size: 137px;background-position-y: 25px;",
-              title: "Home Automation",
-              description: "Technologies for the home",
-              content: ""
-            },
-          ],
-        },
-        "es": {
-          "header": "Soluciones Tecnológicas, <br> Simples y Creativas",
-          "services":[
-            {
-              icon: "uxwing_com_administrator-developer-icon.png",
-              iconStyle: "background-size: 85px 100px;",
-              title: "Asistente Administrativo",
-              description: "Encárgame tareas, ¡aprendo rápido!",
-              content:` 
-              <div style="text-align: left;">
-                10 años experiencia como asistente administrativo en el área Informática Digital de Centro MIP.
-                <br><br>
-                <b>Tareas realizadas:</b> 
-                <ul style="width: 400px;">
-                  <li>Soporte Técnico</li>
-                  <li>Contacto a Clientes</li>
-                  <li>Generación de boletas</li>
-                  <li>Tareas de Ofimatica, Exel</li>
-                  <li>Coordinación, seguimiento y derivacion de tareas</li>
-                  <li>Gestion Multiple Correos</li>
-                  <li>Aprender y usar nuevas Apps</li>
-                  <li>Otras tareas con mis conocimientos:
-                    <ul>
-                      <li>Programación</li>
-                      <li>Configuraciones</li>
-                      <li>Capacitacion</li>
-                      <li>Otros</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              `
-            },
-            {
-              icon: "woven-150x150-small.jpg",
-              iconStyle: "",
-              title: "Sitios web",
-              description: "Desarrollo, integraciones y mantención",
-              content: ""
-            },
-            {
-              icon: "email-address.png",
-              iconStyle: "background-size: 90px;",
-              title: "Correo",
-              description: "Correos personales y envíos masivos",
-              content: ""
-            },
-            {
-              icon: "server-cloud.png",
-              iconStyle: "background-size: 90px;",
-              title: "Cloud (Host, servidores)",
-              description: "Gestión y configuración",
-              content: ""
-            },
-            {
-              icon: "uxwing_com_programmer-computer-icon.png",
-              iconStyle: "background-size: 90px;",
-              title: "Programación",
-              description: "Automatización e integraciones",
-              content: ""
-            },
-            {
-              icon: "uxwing_com_read-icon.png",
-              iconStyle: "background-size: 87px;",
-              title: "Clases Particulares",
-              description: "Computación básica y avanzada",
-              content: ""
-            },
-            {
-              icon: "uxwing_dream-icon.png",
-              iconStyle: "background-size: 100px;",
-              title: "Asesoría",
-              description: "Experiencia y conocimientos",
-              content: ""
-            },
-            {
-              icon: "thenounproject_com_Besokpagi-smart-home-5723166.png",
-              iconStyle: "background-size: 137px;background-position-y: 25px;",
-              title: "Domótica",
-              description: "Tecnologías para el hogar",
-              content: ""
-            },
-          ],
-        }
-      };
-      function setLanguage(lang) {
-        localStorage.setItem('preferredLanguage', lang);
-        var data = translations[lang];
-        document.querySelector(".intro-text").innerHTML = data.header;
-        const servicesRow = document.getElementById("servicesRow");
-        servicesRow.innerHTML='';
-        data.services.forEach(service => {
-          const div = document.createElement('div');
-          div.classList.add("col-lg-3");
-          div.classList.add("col-sm-3");
-          div.classList.add("focus-box");
-          div.classList.add("fade-in");
-          div.innerHTML=`
-            <div class="service-icon">
-              <i class="pixeden shake" style="background:url(${service.icon}) no-repeat center;width:100%; height:100%;${service.iconStyle}"></i>
+        <!-- mouse-pointer end -->
+
+        <!-- preloader -->
+        <div class="loader-wrap">
+            <div class="hendel__preloder">
+                <div class="preloader">
+                    <div class="preloader-ring"> cargando  cargando   cargando </div>
+                    <div class="preloader-ring"> solucion solucione soluciones </div>
+                </div>
             </div>
-            <h3 class="red-border-bottom">${service.title}</h3>
-            <p>${service.description}</p>
-          `;
-          if(service.content){
-            div.style.cursor="pointer";
-            div.addEventListener('click', () => {
-              console.log('Clicked:', service.title);
-              console.log('data:',service.content);
-              const returnImg = document.createElement('img');
-              returnImg.src="uxwing_com_arrow-curved-left-icon.png";
-              returnImg.style.width="40px";
-              returnImg.style.cursor="pointer";
-              returnImg.style.marginTop="-34px";
-              returnImg.addEventListener('click', () => {
-                setLanguage(localStorage.getItem('preferredLanguage'));
-              });
-              servicesRow.innerHTML="";
-              servicesRow.appendChild(returnImg);
-              servicesRow.insertAdjacentHTML("beforeend", "<hr>"+service.content+"<hr><br>");
-              
-            });
-          }
-          servicesRow.appendChild(div);
+        </div>
+        <!-- preloader end -->
 
-        });
-      }
-      window.onload = function () {
-          checkPreferredLanguage();
-          var preferredLanguage = localStorage.getItem('preferredLanguage');
-          console.log("Bowser:" +browserLang + " | Preferes " + preferredLanguage);
-          setLanguage(preferredLanguage);
-          document.getElementById("copyright_year").innerHTML = new Date().getFullYear();
-      };
+        <!-- main header -->
+        <header class="main-header header__style__one ">
+            <!-- header-top-one -->
+            <div class="header-top-one">
+                <div class="auto-container">
+                    <div class="top__inner">
+                        <div class="top__hrader__left">
+                            <ul>
+                                <li><span>WhatsApp :</span>  <a href="https://wa.me/56995330765" target="_blank">+56 9 9533 0765</a></li>
+                                <li>/</li>
+                                <li><span>Email :</span> <a href="mailto:soluciones@mgup.cl">soluciones@mgup.cl</a></li>
+                            </ul>
+                        </div>
+                        <div class="top__hrader__right">
+                            <ul>
+                                <li><a href="https://gasparuribe.cl" target="_blank"><i class="icon-13"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-lower -->
+            <div class="header-lower">
+                <div class="auto-container">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="index.html" style="align-items: center;justify-content: center;display: flex;"><img src="https://gasparuribe.cl/logo-320x320-1-small.png" style="width: 55px;" alt="">
+                                    <div class="title two" style="display: inline-block;padding-top: 0px;padding-left: 15px;">
+                                        <h2>MG<span>UP</span></h2>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="btn-box">
+                            <button class="theme-btn theme-btn-one openPopup" data-popup="loginForm"><i class="icon-09"></i> Ingresa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      function scrollDetect(){
-        var lastScroll = 0;
-        var f = document.getElementById('thetext');
-        window.onscroll = function() {
-            let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
-            if (currentScroll > 0 && lastScroll <= currentScroll){
-              lastScroll = currentScroll;
-              //console.log("Scroll Down, Web Up");
-            }else{
-              lastScroll = currentScroll;
-              //console.log("Scroll Up, Web Down");
-            }
-            var modScroll=currentScroll*0.52;
-            f.style.transform = 'translateY('+modScroll+'px)';
-        };
-      }
-      scrollDetect();
-      /*
-    	 (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
-         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    	 })(window,document,"script","https://www.google-analytics.com/analytics.js","ga");
-    	 ga("create", "UA-46435058-2", "auto");
-    	 ga("send", "pageview");
-       */
-  	</script>
-  </body>
+            <!--sticky Header-->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="index.html" style="align-items: center;justify-content: center;display: flex;"><img src="https://gasparuribe.cl/logo-320x320-1-small.png" style="width: 55px;" alt="">
+                                    <div class="title two" style="display: inline-block;padding-top: 0px;padding-left: 15px;">
+                                        <h2>MG<span>UP</span></h2>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="btn-box">
+                            <button class="theme-btn theme-btn-one openPopup" data-popup="loginForm"><i class="icon-09"></i> Ingresa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- main-header end -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="icon-fa-times"></i></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo.png" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>WhatsApp: <a href="https://wa.me/56995330765" target="_blank">+56 9 9533 0765</a></li>
+                        <li><a href="mailto:soluciones@mgup.cl">soluciones@mgup.cl</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <!-- banner-one -->
+        <section class="banner__one ">
+            <div class="pattern-layer">
+                <div class="banner__icon pattern-1 p_absolute" data-parallax='{"x": 200,"y":1800}' style="background-image: url(assets/images/banner/banner-shap-01.png);"></div>
+            </div>
+            <div class="banner__data p_relative">
+                <div class="banner__bg" style="background-image: url(assets/images/banner/banner-bg.png);"></div>
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="banner__left">
+                                <div class="sub__title">
+                                    <h4>Simple y creativo</h4>
+                                </div>
+                                <div class="banner__title">
+                                    <h1>Soluciones <br><span>Tecnológicas y administrativas</span></h1>
+                                </div>
+                                <div class="text">
+                                    <p>Aprender cosas nuevas y contribuir al crecimiento colectivo. <br>Compromiso con la excelencia en servicios profesionales.</p>
+                                </div>
+                                <div class="btn-box">
+                                    <button class="theme-btn theme-btn-one openPopup" data-popup="contactForm"><i class="icon-02"></i> Contacto</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-4 col-md-12 ">
+                            <div class="banner__right p_relative">
+                                <div class="image__one">
+                                    <figure class="image-box wow slideInUp animated animated animated animated" data-wow-delay="00ms" data-wow-duration="1500ms" style="visibility: visible;">
+                                        <img src="https://gasparuribe.cl/img/galeria/arte_dani/dbd76d63-142d-40f5-983e-0e5d96e39a0d.jpg" alt="">
+                                    </figure>
+                                </div>
+                                <div class="icon__image__banner">
+                                    <div class="circle-main">
+                                        <div class="circle">
+                                            <img width="80px" src="https://gasparuribe.cl/logo-320x320-1-small.png" alt="">
+                                            <div class="round-text">
+                                                <div class="text_1">
+                                                    <p class="text_2">10 años de experiencia y servicios</p>
+                                                </div>
+                                            </div>                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner-one end -->
+
+        <!-- service -->
+        <section class="service__section p_relative">
+            <div class="auto-container">
+                <div class="service__data">
+                    <div class="title__data">
+                        <div class="sub__title">
+                            <h4>Top 3</h4>
+                        </div>
+                        <div class="title">
+                            <h2>Servicios</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="service__block">
+                                <div class="service__icon">
+                                    <i><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 64 80" style="fill: white;width: 55px;enable-background:new 0 0 64 64;" xml:space="preserve"><path d="M2.553,50.895L4,51.618V61c0,0.552,0.447,1,1,1h10c0.553,0,1-0.448,1-1v-9.382l1.447-0.724C17.786,50.725,18,50.379,18,50  v-6c0-2.017-1.501-3.69-3.443-3.961C14.846,39.402,15,38.708,15,38c0-2.757-2.243-5-5-5s-5,2.243-5,5  c0,0.708,0.154,1.402,0.443,2.039C3.501,40.31,2,41.983,2,44v6C2,50.379,2.214,50.725,2.553,50.895z M4,44c0-1.103,0.897-2,2-2h1.38  c0.417,0,0.79-0.258,0.937-0.648s0.035-0.83-0.278-1.104C7.369,39.662,7,38.864,7,38c0-1.654,1.346-3,3-3s3,1.346,3,3  c0,0.864-0.369,1.662-1.038,2.247c-0.313,0.274-0.425,0.714-0.278,1.104S12.203,42,12.62,42H14c1.103,0,2,0.897,2,2v5.382  l-1.447,0.724C14.214,50.275,14,50.621,14,51v9H6v-9c0-0.379-0.214-0.725-0.553-0.895L4,49.382V44z"/><polygon points="9,49 11,49 11,45.618 12.447,44.895 11.553,43.105 10,43.882 8.447,43.105 7.553,44.895 9,45.618 "/><path d="M58.557,40.039C58.846,39.402,59,38.708,59,38c0-2.757-2.243-5-5-5s-5,2.243-5,5c0,0.708,0.154,1.402,0.443,2.039  C47.501,40.31,46,41.983,46,44v6c0,0.379,0.214,0.725,0.553,0.895L48,51.618V61c0,0.552,0.447,1,1,1h10c0.553,0,1-0.448,1-1v-9.382  l1.447-0.724C61.786,50.725,62,50.379,62,50v-6C62,41.983,60.499,40.31,58.557,40.039z M60,49.382l-1.447,0.724  C58.214,50.275,58,50.621,58,51v9h-8v-9c0-0.379-0.214-0.725-0.553-0.895L48,49.382V44c0-1.103,0.897-2,2-2h1.38  c0.417,0,0.79-0.258,0.937-0.648s0.035-0.83-0.278-1.104C51.369,39.662,51,38.864,51,38c0-1.654,1.346-3,3-3s3,1.346,3,3  c0,0.864-0.369,1.662-1.038,2.247c-0.313,0.274-0.425,0.714-0.278,1.104S56.203,42,56.62,42H58c1.103,0,2,0.897,2,2V49.382z"/><polygon points="54,43.882 52.447,43.105 51.553,44.895 53,45.618 53,49 55,49 55,45.618 56.447,44.895 55.553,43.105 "/><path d="M25.182,18.867C26.371,20.245,27,21.819,27,23.42V24c0,0.552,0.447,1,1,1h8c0.553,0,1-0.448,1-1v-0.583  c0-1.592,0.634-3.194,1.784-4.512C40.213,17.27,41,15.172,41,13c0-2.556-1.093-5.001-2.998-6.707  c-1.904-1.705-4.461-2.515-7.025-2.236c-3.947,0.437-7.255,3.594-7.865,7.507C22.701,14.205,23.456,16.867,25.182,18.867z   M25.088,11.871c0.473-3.037,3.042-5.487,6.109-5.826c2.026-0.222,3.968,0.393,5.47,1.738C38.149,9.11,39,11.012,39,13  c0,1.688-0.611,3.318-1.722,4.59c-1.371,1.569-2.167,3.476-2.268,5.41h-6.021c-0.1-1.939-0.888-3.812-2.294-5.44  C25.334,15.982,24.763,13.961,25.088,11.871z"/><rect x="29" y="26" width="6" height="2"/><rect x="30" y="29" width="4" height="2"/><path d="M31,10.899v-2c-2.206,0-4,1.794-4,4h2C29,11.796,29.897,10.899,31,10.899z"/><rect x="43" y="12" width="3" height="2"/><rect x="18" y="12" width="3" height="2"/><rect x="22.161" y="2.561" transform="matrix(0.7071 -0.7071 0.7071 0.7071 3.9125 17.5667)" width="2" height="3"/><rect x="39.339" y="3.061" transform="matrix(0.7071 -0.7071 0.7071 0.7071 9.0902 30.0667)" width="3" height="2"/><path d="M23.713,47.607C23.29,47.734,23,48.124,23,48.565v2.869c0,0.441,0.29,0.831,0.713,0.958l0.765,0.229  c0.101,0.289,0.217,0.57,0.349,0.843l-0.38,0.705c-0.179,0.332-0.155,0.736,0.061,1.046c0.62,0.891,1.387,1.657,2.278,2.278  c0.309,0.215,0.712,0.239,1.045,0.061l0.705-0.379c0.273,0.132,0.555,0.248,0.843,0.348l0.229,0.765  C29.734,58.71,30.124,59,30.565,59h2.869c0.441,0,0.831-0.29,0.958-0.712l0.229-0.765c0.288-0.1,0.569-0.216,0.843-0.348  l0.705,0.379c0.333,0.179,0.736,0.155,1.045-0.06c0.892-0.621,1.658-1.388,2.278-2.279c0.216-0.309,0.239-0.713,0.061-1.045  l-0.38-0.705c0.132-0.273,0.248-0.555,0.349-0.843l0.765-0.229C40.71,52.266,41,51.876,41,51.435v-2.869  c0-0.442-0.29-0.831-0.713-0.958l-0.765-0.229c-0.101-0.289-0.217-0.57-0.349-0.843l0.38-0.705c0.179-0.332,0.155-0.736-0.061-1.045  c-0.619-0.89-1.386-1.657-2.277-2.279c-0.308-0.215-0.713-0.239-1.046-0.06l-0.705,0.379c-0.273-0.132-0.555-0.248-0.843-0.348  l-0.229-0.765C34.266,41.29,33.876,41,33.435,41h-2.869c-0.441,0-0.831,0.29-0.958,0.712l-0.229,0.765  c-0.288,0.1-0.569,0.216-0.843,0.348l-0.705-0.379c-0.333-0.179-0.736-0.155-1.045,0.06c-0.892,0.621-1.658,1.388-2.278,2.279  c-0.216,0.309-0.239,0.713-0.061,1.045l0.407,0.756l-0.32,0.775L23.713,47.607z M25,49.31l0.562-0.168  c0.288-0.086,0.522-0.298,0.637-0.576l0.684-1.653c0.115-0.277,0.099-0.592-0.043-0.856l-0.327-0.608  c0.282-0.34,0.595-0.654,0.936-0.937l0.608,0.327c0.304,0.165,0.673,0.159,0.973-0.014c0.439-0.253,0.915-0.45,1.414-0.584  c0.334-0.09,0.598-0.346,0.697-0.678L31.31,43h1.381l0.169,0.563c0.1,0.332,0.363,0.588,0.697,0.678  c0.497,0.134,0.974,0.331,1.414,0.584c0.301,0.173,0.67,0.178,0.973,0.014l0.607-0.327c0.342,0.283,0.654,0.596,0.937,0.937  l-0.327,0.607c-0.164,0.305-0.158,0.673,0.015,0.974c0.253,0.438,0.449,0.914,0.584,1.414c0.091,0.334,0.348,0.598,0.679,0.697  L39,49.31v1.381l-0.562,0.168c-0.331,0.1-0.588,0.363-0.678,0.697c-0.136,0.5-0.333,0.977-0.585,1.415  c-0.173,0.3-0.179,0.668-0.015,0.974l0.327,0.608c-0.282,0.34-0.595,0.654-0.936,0.937l-0.608-0.327  c-0.303-0.164-0.672-0.159-0.973,0.014c-0.44,0.253-0.917,0.45-1.414,0.584c-0.334,0.09-0.598,0.346-0.697,0.678L32.69,57H31.31  l-0.169-0.563c-0.1-0.332-0.363-0.588-0.697-0.678c-0.497-0.134-0.974-0.331-1.414-0.584c-0.301-0.173-0.668-0.178-0.973-0.014  l-0.607,0.327c-0.341-0.283-0.654-0.596-0.937-0.937l0.327-0.607c0.164-0.305,0.158-0.673-0.015-0.973  c-0.253-0.439-0.449-0.915-0.585-1.415c-0.09-0.333-0.346-0.597-0.678-0.697L25,50.69V49.31z"/><path d="M32,54c2.206,0,4-1.794,4-4s-1.794-4-4-4s-4,1.794-4,4S29.794,54,32,54z M32,48c1.103,0,2,0.897,2,2s-0.897,2-2,2  s-2-0.897-2-2S30.897,48,32,48z"/><rect x="24" y="29" width="2" height="2"/><rect x="20" y="29" width="2" height="2"/><rect x="16" y="29" width="2" height="2"/><rect x="12" y="29" width="2" height="2"/><rect x="50" y="29" width="2" height="2"/><rect x="46" y="29" width="2" height="2"/><rect x="42" y="29" width="2" height="2"/><rect x="38" y="29" width="2" height="2"/><rect x="31" y="33" width="2" height="2"/><rect x="31" y="37" width="2" height="2"/><text x="0" y="79" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Nithinan Tatah</text><text x="0" y="84" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg></i>
+                                    <div class="service__icon__two"></div>
+                                </div>
+                                <div class="service__text">
+                                    <h4><a href="services.html#asistente">Asistente, Soporte y asesorías</a></h4>
+                                    <p>Encarga tareas. Presencial o remoto. Por hora, proyectos y personalizado.</p>
+                                </div>
+                                <div class="service__button">
+                                    <a href="services.html#asistente"><i class="icon-05"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="service__block">
+                                <div class="service__icon">
+                                    <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" x="0px" y="0px" style="fill: white;width: 55px;"><g><path d="M13.293,14.293l-3,3a1,1,0,0,0,0,1.414l3,3,1.414-1.414L12.414,18l2.293-2.293Z"/><rect x="14.228" y="17" width="8.544" height="2" transform="translate(-4.85 29.002) rotate(-69.444)"/><path d="M23.707,21.707l3-3a1,1,0,0,0,0-1.414l-3-3-1.414,1.414L24.586,18l-2.293,2.293Z"/><rect x="10" y="26" width="4" height="2"/><rect x="16" y="26" width="10" height="2"/><rect x="12" y="30" width="4" height="2"/><rect x="18" y="30" width="10" height="2"/><rect x="30" y="30" width="2" height="2"/><rect x="12" y="34" width="4" height="2"/><rect x="18" y="34" width="10" height="2"/><rect x="30" y="34" width="2" height="2"/><path d="M61.142,13.01l-2.682-.383a10.86,10.86,0,0,0-.679-1.639l1.625-2.166a1,1,0,0,0-.093-1.307L56.485,4.687a1,1,0,0,0-1.306-.093L53.012,6.218a10.9,10.9,0,0,0-1.639-.678L50.99,2.858A1,1,0,0,0,50,2H46a1,1,0,0,0-.99.858L44.627,5.54a10.855,10.855,0,0,0-1.639.678L40.821,4.594a1,1,0,0,0-1.306.093L36.687,7.515a1,1,0,0,0-.093,1.307l1.625,2.166a10.86,10.86,0,0,0-.679,1.639l-2.682.383A1,1,0,0,0,34,14v4a1,1,0,0,0,.858.99l2.682.383a10.86,10.86,0,0,0,.679,1.639l-1.625,2.166a1,1,0,0,0,.093,1.307l2.828,2.828a1,1,0,0,0,1.306.093l2.167-1.624a10.855,10.855,0,0,0,1.639.678l.383,2.682A1,1,0,0,0,46,30h4a1,1,0,0,0,.99-.858l.383-2.682a10.9,10.9,0,0,0,1.639-.678l2.167,1.624a1,1,0,0,0,1.306-.093l2.828-2.828a1,1,0,0,0,.093-1.307l-1.625-2.166a10.86,10.86,0,0,0,.679-1.639l2.682-.383A1,1,0,0,0,62,18V14A1,1,0,0,0,61.142,13.01ZM60,17.133l-2.463.352a1,1,0,0,0-.827.742,8.923,8.923,0,0,1-.977,2.357,1,1,0,0,0,.061,1.111l1.492,1.99-1.6,1.6-1.991-1.492a1,1,0,0,0-1.11-.06,8.859,8.859,0,0,1-2.356.975,1,1,0,0,0-.744.828L49.133,28H46.867l-.351-2.463a1,1,0,0,0-.744-.828,8.859,8.859,0,0,1-2.356-.975,1,1,0,0,0-1.11.06l-1.991,1.492-1.6-1.6,1.492-1.99a1,1,0,0,0,.061-1.111,8.923,8.923,0,0,1-.977-2.357,1,1,0,0,0-.827-.742L36,17.133V14.867l2.463-.352a1,1,0,0,0,.827-.742,8.923,8.923,0,0,1,.977-2.357,1,1,0,0,0-.061-1.111l-1.492-1.99,1.6-1.6,1.991,1.492a1,1,0,0,0,1.11.06,8.859,8.859,0,0,1,2.356-.975,1,1,0,0,0,.744-.828L46.867,4h2.266l.351,2.463a1,1,0,0,0,.744.828,8.859,8.859,0,0,1,2.356.975,1,1,0,0,0,1.11-.06l1.991-1.492,1.6,1.6-1.492,1.99a1,1,0,0,0-.061,1.111,8.923,8.923,0,0,1,.977,2.357,1,1,0,0,0,.827.742L60,14.867Z"/><path d="M48,10a6,6,0,1,0,6,6A6.006,6.006,0,0,0,48,10Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,48,20Z"/><path d="M52,40H4V15a3,3,0,0,1,3-3H35V10H7a5.006,5.006,0,0,0-5,5V45a5.006,5.006,0,0,0,5,5H19.867l-.75,6H17a2,2,0,0,0-2,2v2a2,2,0,0,0,2,2H39a2,2,0,0,0,2-2V58a2,2,0,0,0-2-2H36.883l-.75-6H49a5.006,5.006,0,0,0,5-5V29H52ZM39,60H17V58H39Zm-4.133-4H21.133l.75-6H34.117ZM49,48H7a3,3,0,0,1-3-3V42H52v3A3,3,0,0,1,49,48Z"/><rect x="46" y="44" width="2" height="2"/></g><text x="0" y="79" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Komkrit Noenpoempisut</text><text x="0" y="84" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg></i>
+                                    <div class="service__icon__two"></div>
+                                </div>
+                                <div class="service__text">
+                                    <h4><a href="services.html#programacion">Configuraciones y Programación</a></h4>
+                                    <p>Desarrollo, integraciones y mantención. Servidores, sitios web, mailing, apps, domótica...</p>
+                                </div>
+                                <div class="service__button">
+                                    <a href="services.html#programacion"><i class="icon-05"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="service__block">
+                                <div class="service__icon">
+                                    <i><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 160 200" style="fill: white;width: 55px;enable-background:new 0 0 160 160;" xml:space="preserve"><path d="M130.725,63.895v-7.5c0-27.97-22.75-50.73-50.73-50.73c-27.97,0-50.73,22.76-50.73,50.73v7.5c-4.47,0.96-7.83,4.94-7.83,9.7  v12.82c0,5.47,4.45,9.92,9.92,9.92h5.75v5.5c0,0.84,0.3,1.65,0.85,2.28l12.43,14.45v32.27c0,1.93,1.56,3.5,3.5,3.5h52.23  c1.93,0,3.5-1.57,3.5-3.5v-30.09v-2.19v-0.09h-9.15l-5.34,6.2h-30.25l-20.77-24.13v-36.64c0-12.22,6.14-23.03,15.5-29.51  c0.13,0.3,0.32,0.59,0.58,0.83l4.66,4.38v23.1c0,1.38,1.12,2.5,2.5,2.5c1.38,0,2.5-1.12,2.5-2.5v-24.18c0-0.69-0.28-1.35-0.79-1.82  l-5.17-4.86c4.29-2.17,9.07-3.5,14.13-3.78v15.09c-2.61,1.01-4.46,3.54-4.46,6.5c0,2.96,1.85,5.49,4.46,6.5v16.62  c0,1.38,1.12,2.5,2.5,2.5c1.39,0,2.5-1.12,2.5-2.5v-16.62c2.61-1.01,4.47-3.54,4.47-6.5c0-2.96-1.86-5.49-4.47-6.5v-15  c4.94,0.41,9.6,1.82,13.77,4.04l-4.8,4.51c-0.51,0.47-0.79,1.13-0.79,1.82v24.18c0,1.38,1.12,2.5,2.5,2.5s2.5-1.12,2.5-2.5v-23.1  l4.66-4.38c0.1-0.1,0.19-0.2,0.27-0.31c8.95,6.53,14.77,17.09,14.77,28.99v36.64l-4.24,4.93l-0.86,1l-1.3,1.5l-0.856,0.995H93.453  c-0.35-0.908-0.839-1.747-1.428-2.495c-1.78-2.26-4.54-3.71-7.63-3.71h-7.75c-5.35,0-9.71,4.35-9.71,9.71c0,5.35,4.36,9.7,9.71,9.7  h7.75c3.09,0,5.84-1.45,7.62-3.7c0.6-0.75,1.08-1.59,1.43-2.5c0.001-0.002,0.001-0.003,0.002-0.005h34.781  c1.933,0,3.5-1.567,3.5-3.5V95.834c0.899-0.28,1.738-0.699,2.497-1.229c2.62-1.78,4.34-4.79,4.34-8.19v-12.82  C138.565,68.835,135.195,64.855,130.725,63.895z M57.385,126.695l3.23,3.76c0.67,0.77,1.64,1.21,2.65,1.21h33.46  c1.02,0,1.99-0.44,2.65-1.21l3.24-3.76v20.64h-19.12v-9.04c0-1.93-1.56-3.5-3.5-3.5c-1.93,0-3.5,1.57-3.5,3.5v9.04h-19.11V126.695z   M131.565,73.595v12.82c0,0.76-0.3,1.48-0.79,1.99c-0.54,0.57-1.3,0.93-2.14,0.93h-5.74v-18.67h5.74  C130.245,70.665,131.565,71.975,131.565,73.595z M37.105,89.335h-5.75c-1.61,0-2.92-1.31-2.92-2.92v-12.82  c0-1.62,1.31-2.93,2.92-2.93h5.75V89.335z M80.515,51.615c-1.08,0-1.96-0.89-1.96-1.97c0-1.09,0.88-1.97,1.96-1.97  c1.09,0,1.97,0.88,1.97,1.97C82.485,50.725,81.605,51.615,80.515,51.615z M80.045,21.005h-0.05c-23.57,0-42.76,19.12-42.89,42.66  h-0.84v-7.27c0-24.11,19.62-43.73,43.73-43.73c24.12,0,43.73,19.62,43.73,43.73v7.27h-0.84  C122.765,40.135,103.605,21.035,80.045,21.005z M86.015,114.625c-0.45,0.34-1.01,0.54-1.62,0.54h-7.75c-1.49,0-2.71-1.21-2.71-2.7  c0-1.5,1.22-2.71,2.71-2.71h7.75c0.61,0,1.17,0.2,1.62,0.54c0.66,0.49,1.09,1.28,1.09,2.17  C87.105,113.345,86.675,114.135,86.015,114.625z M117.879,108.96l0.856-0.995l1.29-1.5l0.86-1l1.16-1.35  c0.07-0.08,0.13-0.15,0.18-0.23c0.44-0.59,0.67-1.31,0.67-2.05v-5.5h1.833v12.625H117.879z"/><text x="0" y="175" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Symbolon</text><text x="0" y="180" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg></i>
+                                    <div class="service__icon__two"></div>
+                                </div>
+                                <div class="service__text">
+                                    <h4><a href="services.html#clases_y_asesorias">Optimizacion Computadores y Redes</a></h4>
+                                    <p>Diagnosticos, restauracion y mejoras.</p>
+                                </div>
+                                <div class="service__button">
+                                    <a href="services.html#clases_y_asesorias"><i class="icon-05"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- service-end -->
+        
+        <!-- footer-one -->
+        <footer class="main__footer">
+            <!-- proximamente
+            <div class="footer-top">
+                <div class="auto-container">
+                    <div class="top-inner">
+                        <div class="left__top">
+                            <h3>Obten más información de los servicios</h3>
+                        </div>
+                        <div class="right__top">
+                            <div class="btn-box">
+                                <a href="services.html" class="theme-btn theme-btn-one"><i class="icon-02"></i> Aqui!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="footer__one" style="z-index: -1;">
+                <div class="footer-widget-section">
+                    <div class="auto-container">
+                        <div class="row clearfix">
+                            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                                <div class="footer-widget news-letter-widget ml_80 wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <div class="widget-title">
+                                        <h4>Sobre Mí</h4>
+                                    </div>
+                                    <div class="widget-content">
+                                        <p>Soy Gaspar Uribe, apasionado por la tecnología y DIY.</p>
+                                        <a href="https://gasparuribe.cl?link_from=mgup-cl" target="_blank" rel="nofollow" style="color:hotpink;">gasparuribe.cl</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                                <div class="footer-widget footer-logo-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <div class="btn-box mb-30">
+                                        <button class="theme-btn theme-btn-one openPopup" data-popup="contactForm"><i class="icon-02"></i> Contacto</button>
+                                    </div>
+                                    <div class="text">
+                                        <ul>
+                                            <li><span style="color:#F6EC4F;">WhatsApp :</span>  <a href="https://wa.me/56995330765" target="_blank">+56 9 9533 0765</a></li>
+                                            <li><span style="color:#F6EC4F;">Email :</span> <a href="mailto:soluciones@mgup.cl">soluciones@mgup.cl</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                                <div class="footer-widget news-letter-widget ml_80 wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <div class="widget-title">
+                                        <h4></h4>
+                                    </div>
+                                    <div class="widget-content">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                                <img src="assets/images/logo.gif" style="max-width: 250px;" alt="Logo Animado">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="auto-container">
+                        <div class="bottom-inner">
+                            <div class="copyright">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-one end -->
+
+        <!--Scroll to top-->
+        <div class="scroll-to-top">
+            <div>
+                <div class="scroll-top-inner">
+                    <div class="scroll-bar">
+                        <div class="bar-inner"></div>
+                    </div>
+                    <div class="scroll-bar-text g_color">Go To Top</div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to top end -->
+
+
+    </div>
+
+
+
+  <!-- Form Popup -->
+  <div id="formOverlay" class="overlay" data-popup-type="contactForm">
+    <div class="popup">
+      <div class="response"></div>
+      <form>
+        <input type="hidden" name="alia" value="WebForm">
+        <input type="hidden" name="contact" value="mgup.cl">
+        <textarea name="msg" placeholder="Recuerda decir tu alias y contacto de ser necesario. Escribe aquí..." required  style="background-color: white;"></textarea>
+        <div class="popup-buttons">
+          <button type="button" class="closePopup" style="background-color: #D72C2C;">Cerrar</button>
+          <button type="submit" style="background-color: hotpink;">Enviar</button>
+        </div>
+      </form>
+      <div>
+        <ul>
+            <li><span style="color:#F6EC4F;">WhatsApp :</span>  <a href="https://wa.me/56995330765" target="_blank">+56 9 9533 0765</a></li>
+            <li><span style="color:#F6EC4F;">Email :</span> <a href="mailto:soluciones@mgup.cl">soluciones@mgup.cl</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Popup -->
+  <div id="loginOverlay" class="overlay" data-popup-type="loginForm">
+    <div class="popup row">
+      <div class="col">
+        <form style="max-width: 600px;" class="col">
+            <input type="text" name="username" placeholder="Usuario" style="background-color: white;" required>
+            <input type="password" name="password" placeholder="Contraseña" style="background-color: white;" required>
+            <div class="popup-buttons">
+              <button type="button" class="closePopup" style="background-color: #D72C2C;">Cerrar</button>
+              <button type="submit" style="background-color: hotpink;">Login</button>
+            </div>
+          </form>
+          <div class="response"></div>
+      </div>
+      
+      <div class="col"></div>
+    </div>
+  </div>
+
+
+
+    <!-- jequery plugins -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
+
+
+    <!-- main-js -->
+    <script src="assets/js/script.js"></script>
+
+</body><!-- End of .page_wrapper -->
 </html>

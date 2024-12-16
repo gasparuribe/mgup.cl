@@ -498,4 +498,10 @@ body.home__three {
     padding: 40px;
   }
 
+  .header-lower .theme-btn {
+    padding: 15px 5px;
+  }
+  .header-lower .outer-box .logo-box .logo {
+    min-width: 160px;
+  }
 }

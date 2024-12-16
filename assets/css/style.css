@@ -178,6 +178,7 @@
     top: 22px;
     width: 370px;
     height: 469px;
+    z-index: 2;
 }
 .banner__data{
     padding: 90px 0px 140px;

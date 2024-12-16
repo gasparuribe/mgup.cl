@@ -66,3 +66,19 @@
   .loading-cursor {
     cursor: progress !important;
   }
+
+
+@media only screen and (max-width: 767px){
+  .popup {
+    max-width: 90%;
+  }
+}
+  
+@media only screen and (max-width: 399px){
+  .popup {
+    max-width: 98%;
+  }
+  .popup textarea{
+    height: 200px;
+  }
+}

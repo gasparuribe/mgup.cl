@@ -472,7 +472,9 @@ body.home__three {
 .error__page h1.title {
   font-size: 100px;
 }
-
+.header-lower .theme-btn {
+  padding: 15px 5px;
+}
 }
 
 

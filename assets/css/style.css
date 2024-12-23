@@ -41,6 +41,12 @@
 
 
 **********************************************/
+a {
+ z-index: 4 !important;   
+}
+button {
+    z-index: 4!important;   
+}
 /*** 
 
 ====================================================================
@@ -203,6 +209,10 @@ section.banner__one {
 /* banner__section  end */
 
 /* service__section */
+
+.service__section{
+    z-index: 3;
+}
 .service__block {
     position: relative;
     padding: 40px 50px 88px;

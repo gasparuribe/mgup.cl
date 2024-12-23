@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const result = await response.json();
           responseElement.textContent = overlay.dataset.popupType === 'contactForm'
             ? `${result.message}.`
-            : `Welcome, ${result.username}`;
+            : `Sistema en progreso. No se permite ingreso.`;
         } catch (error) {
           responseElement.textContent = `Error: ${error.message}`;
         } finally {

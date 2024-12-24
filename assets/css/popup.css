@@ -81,13 +81,13 @@
 
 @media only screen and (max-width: 767px){
   .popup {
-    max-width: 95%;
+    width: 95%;
   }
 }
   
 @media only screen and (max-width: 399px){
   .popup {
-    max-width: 99%;
+    width: 99%;
   }
   .popup textarea{
     height: 200px;

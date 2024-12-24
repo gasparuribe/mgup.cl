@@ -12,13 +12,15 @@
   }
 
   .popup {
-    background: #2b2c2c;
+    background: #060E26;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 70%;
-    width: 100%;
+    max-width: 1300px;
+    max-height: 98%;
+    width: 85%;
     position: relative;
+    overflow: auto;
   }
 
   .popup h2 {
@@ -38,7 +40,16 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-
+.closePopup{
+  position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+    background: linear-gradient(219deg, #f70000 0%, #5d005f 100%);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
   .popup form button {
     cursor: pointer;
   }
@@ -70,13 +81,13 @@
 
 @media only screen and (max-width: 767px){
   .popup {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
   
 @media only screen and (max-width: 399px){
   .popup {
-    max-width: 98%;
+    max-width: 99%;
   }
   .popup textarea{
     height: 200px;

@@ -312,7 +312,7 @@ section.banner__one {
   position: absolute;
   inset: 0;
   padding: 1px 1px 0px;
-  border-radius: 194.5px 194.5px 0px 0px;
+  border-radius: 0px 0px 194.5px 194.5px;
   background:linear-gradient(180deg, rgba(246, 236, 79, 0.53), rgba(150, 6, 147, 0.23)); 
   -webkit-mask: 
      linear-gradient(#fff 0 0) content-box, 
